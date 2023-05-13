@@ -17,6 +17,8 @@
 		22133AC62A05DDF500E006A8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22133AC52A05DDF500E006A8 /* ColorExtension.swift */; };
 		222560AD2A0958190083DD1A /* IPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222560AC2A0958190083DD1A /* IPView.swift */; };
 		222560AF2A0966320083DD1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222560AE2A0966320083DD1A /* HideKeyboard.swift */; };
+		22E773E52A102D1500AFE27E /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E773E42A102D1500AFE27E /* VPNChecker.swift */; };
+		22E773E62A102D1500AFE27E /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E773E42A102D1500AFE27E /* VPNChecker.swift */; };
 		22EA47432A0CC96300783B2E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA47422A0CC96300783B2E /* WidgetKit.framework */; };
 		22EA47452A0CC96300783B2E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA47442A0CC96300783B2E /* SwiftUI.framework */; };
 		22EA47482A0CC96300783B2E /* VPNActiveWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA47472A0CC96300783B2E /* VPNActiveWidgetBundle.swift */; };
@@ -75,6 +77,7 @@
 		22E773DC2A0FA6C000AFE27E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		22E773E02A1027A100AFE27E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22E773E12A102C1D00AFE27E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		22E773E42A102D1500AFE27E /* VPNChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNChecker.swift; sourceTree = "<group>"; };
 		22EA473B2A0CC91700783B2E /* VPNActive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPNActive.entitlements; sourceTree = "<group>"; };
 		22EA47402A0CC96300783B2E /* VPNActiveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VPNActiveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EA47422A0CC96300783B2E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -148,6 +151,7 @@
 				22133AC52A05DDF500E006A8 /* ColorExtension.swift */,
 				222560AE2A0966320083DD1A /* HideKeyboard.swift */,
 				22EA475F2A0E9FCE00783B2E /* AttributedString.swift */,
+				22E773E42A102D1500AFE27E /* VPNChecker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -323,6 +327,7 @@
 			files = (
 				22EA47612A0EA1AF00783B2E /* AttributedString.swift in Sources */,
 				22EA475E2A0D826B00783B2E /* CurrencySymbol.swift in Sources */,
+				22E773E62A102D1500AFE27E /* VPNChecker.swift in Sources */,
 				22EA475D2A0D824F00783B2E /* FlagEmoji.swift in Sources */,
 				22EA475B2A0D7D9600783B2E /* ViewModel.swift in Sources */,
 				22EA474A2A0CC96300783B2E /* VPNActiveWidget.swift in Sources */,
@@ -338,6 +343,7 @@
 			files = (
 				22133AC42A05D90D00E006A8 /* CurrencySymbol.swift in Sources */,
 				22133AB92A05A1F000E006A8 /* MapView.swift in Sources */,
+				22E773E52A102D1500AFE27E /* VPNChecker.swift in Sources */,
 				222560AD2A0958190083DD1A /* IPView.swift in Sources */,
 				22133AC22A05CB6200E006A8 /* FlagEmoji.swift in Sources */,
 				220612FC2A0302F500AD784E /* ViewModel.swift in Sources */,
