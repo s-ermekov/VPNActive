@@ -101,7 +101,7 @@ struct IPViewLine: View {
         HStack(alignment: .bottom) {
             Text(text)
             Spacer()
-            Image(systemName: "clipboard")
+            Image(systemName: "square.on.square")
                 .scaleEffect(0.85)
                 .onTapGesture { UIPasteboard.general.string = toCopy
                     withAnimation { toast = true } } }

@@ -48,7 +48,6 @@ extension Model {
     static func fetchData(completion: @escaping (Model?, Error?) -> ()) {
         guard let url = URL(string: "https://ipapi.co/json") else { return }
         let request = URLRequest(url: url)
-        completion(Model.bishkek, nil)
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error {
                 print("DEBUG: Model Extension. Error of fetching data model. Localized Description: \(error.localizedDescription)")
@@ -63,7 +62,7 @@ extension Model {
                 }
             }
         }
-//        .resume()
+        .resume()
     }
     
     // Computed properties
