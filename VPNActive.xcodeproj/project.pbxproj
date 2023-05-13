@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		220612F82A0302A500AD784E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612F72A0302A500AD784E /* Model.swift */; };
-		220612FA2A0302C600AD784E /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612F92A0302C600AD784E /* VPNChecker.swift */; };
 		220612FC2A0302F500AD784E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612FB2A0302F500AD784E /* ViewModel.swift */; };
 		220613032A0306B100AD784E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220613022A0306B100AD784E /* MainView.swift */; };
 		22133AB92A05A1F000E006A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22133AB82A05A1F000E006A8 /* MapView.swift */; };
@@ -26,7 +25,6 @@
 		22EA474F2A0CC96700783B2E /* VPNActiveWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 22EA474B2A0CC96400783B2E /* VPNActiveWidget.intentdefinition */; };
 		22EA47502A0CC96700783B2E /* VPNActiveWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 22EA474B2A0CC96400783B2E /* VPNActiveWidget.intentdefinition */; };
 		22EA47532A0CC96700783B2E /* VPNActiveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 22EA47402A0CC96300783B2E /* VPNActiveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		22EA47592A0D694E00783B2E /* VPNChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612F92A0302C600AD784E /* VPNChecker.swift */; };
 		22EA475B2A0D7D9600783B2E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612FB2A0302F500AD784E /* ViewModel.swift */; };
 		22EA475C2A0D7E3700783B2E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220612F72A0302A500AD784E /* Model.swift */; };
 		22EA475D2A0D824F00783B2E /* FlagEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22133AC12A05CB6200E006A8 /* FlagEmoji.swift */; };
@@ -65,7 +63,6 @@
 
 /* Begin PBXFileReference section */
 		220612F72A0302A500AD784E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		220612F92A0302C600AD784E /* VPNChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNChecker.swift; sourceTree = "<group>"; };
 		220612FB2A0302F500AD784E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		220613022A0306B100AD784E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		22133AB82A05A1F000E006A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -77,6 +74,7 @@
 		222560AE2A0966320083DD1A /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		22E773DC2A0FA6C000AFE27E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		22E773E02A1027A100AFE27E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		22E773E12A102C1D00AFE27E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22EA473B2A0CC91700783B2E /* VPNActive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPNActive.entitlements; sourceTree = "<group>"; };
 		22EA47402A0CC96300783B2E /* VPNActiveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VPNActiveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EA47422A0CC96300783B2E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -145,7 +143,6 @@
 		22133AC02A05CB5000E006A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				220612F92A0302C600AD784E /* VPNChecker.swift */,
 				22133AC12A05CB6200E006A8 /* FlagEmoji.swift */,
 				22133AC32A05D90D00E006A8 /* CurrencySymbol.swift */,
 				22133AC52A05DDF500E006A8 /* ColorExtension.swift */,
@@ -181,6 +178,7 @@
 			children = (
 				22EA47582A0CC9B600783B2E /* VPNActiveWidgetExtension.entitlements */,
 				22E773E02A1027A100AFE27E /* README.md */,
+				22E773E12A102C1D00AFE27E /* LICENSE */,
 				22FF14C829FED97400505B25 /* VPNActive */,
 				22EA47462A0CC96300783B2E /* VPNActiveWidget */,
 				22EA47412A0CC96300783B2E /* Frameworks */,
@@ -327,7 +325,6 @@
 				22EA475E2A0D826B00783B2E /* CurrencySymbol.swift in Sources */,
 				22EA475D2A0D824F00783B2E /* FlagEmoji.swift in Sources */,
 				22EA475B2A0D7D9600783B2E /* ViewModel.swift in Sources */,
-				22EA47592A0D694E00783B2E /* VPNChecker.swift in Sources */,
 				22EA474A2A0CC96300783B2E /* VPNActiveWidget.swift in Sources */,
 				22EA475C2A0D7E3700783B2E /* Model.swift in Sources */,
 				22EA474F2A0CC96700783B2E /* VPNActiveWidget.intentdefinition in Sources */,
@@ -345,7 +342,6 @@
 				22133AC22A05CB6200E006A8 /* FlagEmoji.swift in Sources */,
 				220612FC2A0302F500AD784E /* ViewModel.swift in Sources */,
 				220613032A0306B100AD784E /* MainView.swift in Sources */,
-				220612FA2A0302C600AD784E /* VPNChecker.swift in Sources */,
 				220612F82A0302A500AD784E /* Model.swift in Sources */,
 				22EA47502A0CC96700783B2E /* VPNActiveWidget.intentdefinition in Sources */,
 				22FF14CC29FED97400505B25 /* ContentView.swift in Sources */,
