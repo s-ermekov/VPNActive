@@ -26,18 +26,44 @@ struct Model: Decodable {
     let country_calling_code: String?
     let currency: String?
     let currency_name: String?
+    let asn: String?
+    let org: String?
+    
+    var utc: String? {
+        if let utc_offset {
+            let last = utc_offset.lastIndex(of: "0")
+            let dotOffset = utc_offset.index(last!, offsetBy: -1)
+            var str = utc_offset
+            str.insert(":", at: dotOffset)
+            return str
+        } else {
+            return nil
+        }
+    }
 }
 
 extension Model {
-    static func getBishkekData() -> Model? {
-        guard let url = Bundle.main.url(forResource: "bishkek", withExtension: "json"), let data = try? Data(contentsOf: url) else {  return nil }
-        do {
-            let bishkekData = try JSONDecoder().decode(Model.self, from: data)
-            return bishkekData
-        } catch {
-            print("Error decoding JSON: \(error)")
+    static let bishkek = Model(ip: "193.34.225.69", city: "Bishkek", region: "", region_code: "", country: "KG", country_name: "Kyrgyzstan", country_code: "KG", country_capital: "Bishkek", country_tld: ".kg", postal: nil, latitude: 42.8696, longitude: 74.5932, timezone: "Asia/Bishkek", utc_offset: "+0600", country_calling_code: "+996", currency: "KGS", currency_name: "Som", asn: "AS42837", org: "Extra Line LLC")
+    
+    static func fetchData(completion: @escaping (Model?, Error?) -> ()) {
+        guard let url = URL(string: "https://ipapi.co/json") else { return }
+        let request = URLRequest(url: url)
+        completion(Model.bishkek, nil)
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error {
+                print("DEBUG: Model Extension. Error of fetching data model. Localized Description: \(error.localizedDescription)")
+                completion(nil, error)
+            }
+            if let data {
+                do {
+                    let model = try JSONDecoder().decode(Model.self, from: data)
+                    completion(model, nil)
+                } catch {
+                    completion(nil, error)
+                }
+            }
         }
-        return nil
+//        .resume()
     }
     
     // Computed properties

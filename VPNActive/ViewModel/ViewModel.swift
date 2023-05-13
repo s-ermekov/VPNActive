@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 import MapKit
+import WidgetKit
 
-@MainActor
 class ViewModel: ObservableObject {
     @Published var vpnStatus = "N/A"
     @Published var isLoading = false
@@ -19,14 +19,12 @@ class ViewModel: ObservableObject {
         center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
         span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.015)
     )
+    @Published var toast: Bool = false
     
     func updateData() {
         if !isLoading {
-            Task {
-                self.vpnStatus = VpnChecker.isVpnActive() ? "ON" : "OFF"
-//                mockData()
-                await fetchIpData()
-            }
+            self.vpnStatus = VPNChecker.vpnActive() ? "ON" : "OFF"
+            fetchData()
         } else {
             print("Data is loading... Be patient.")
         }
@@ -34,35 +32,39 @@ class ViewModel: ObservableObject {
     }
     
     func updateRegion() {
+        self.isLoading = true
         if let lat = ipData?.latitude, let lon = ipData?.longitude {
-            self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-            withAnimation {
-                self.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.015))
+            DispatchQueue.main.async {
+                self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                withAnimation {
+                    self.region = MKCoordinateRegion(center: self.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.015))
+                    self.isLoading = false
+                }
+            }
+        } else {
+            self.isLoading = false
+        }
+    }
+    
+    private func fetchData() {
+        self.isLoading = true
+        Model.fetchData { model, error in
+            if let error {
+                print("DEBUG: View Model. fetchData Error. Localized Description: \(error.localizedDescription).")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.ipData = nil
+                    self.isLoading = false
+                }
+            }
+            if let model {
+                DispatchQueue.main.async {
+                    self.ipData = model
+                    self.updateRegion()
+                    WidgetCenter.shared.reloadTimelines(ofKind: "VPN Active Widget")
+                    self.isLoading = false
+                }
             }
         }
-    }
-    
-    private func mockData() {
-        self.isLoading = true
-        if let bishkekData = Model.getBishkekData() {
-            self.ipData = bishkekData
-            self.updateRegion()
-        }
-        self.isLoading = false
-    }
-    
-    private func fetchIpData() async {
-        self.isLoading = true
-        do {
-            guard let geodataUrl = URL(string: "https://ipapi.co/json") else { return }
-            let (geodata, _) = try await URLSession.shared.data(from: geodataUrl)
-            let decoded = try JSONDecoder().decode(Model.self, from: geodata)
-            self.ipData = decoded
-            self.updateRegion()
-        } catch {
-            print("DEBUG: Error catched during fetching IP geo data.")
-            print(error)
-        }
-        self.isLoading = false
+        
     }
 }

@@ -7,7 +7,25 @@
 		<key>VPNActive.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>VPNActiveWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>22EA473F2A0CC96300783B2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>22FF14C529FED97400505B25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

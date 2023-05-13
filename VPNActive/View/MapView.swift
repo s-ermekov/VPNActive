@@ -36,18 +36,19 @@ struct MapView: View {
                         vm.updateRegion()
                     } label: {
                         Image(systemName: "location.fill")
-                            .foregroundColor(Color.accentRed)
+                            .foregroundColor(Color.themeColor)
                             .frame(width: 48, height: 48)
-                            .background(.gray.opacity(0.75))
+                            .background(.white)
                             .cornerRadius(8)
                     }
+                    .disabled(vm.isLoading)
                     Button {
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
-                            .foregroundColor(Color.accentRed)
+                            .foregroundColor(Color.themeColor)
                             .frame(width: 48, height: 48)
-                            .background(.gray.opacity(0.75))
+                            .background(.white)
                             .cornerRadius(8)
                     }
                 }

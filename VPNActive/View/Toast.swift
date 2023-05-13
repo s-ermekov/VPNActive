@@ -13,12 +13,12 @@ struct Toast: View {
     var body: some View {
         Text("\"\(UIPasteboard.general.string ?? "")\" copied to clipboard")
             .foregroundColor(.white)
-            .padding(.vertical, 22)
+            .padding(.vertical)
             .frame(width: UIScreen.main.bounds.width - 32)
-            .background(Color.accentRed)
+            .background(Color.themeColor)
             .transition(.move(edge: .top))
             .cornerRadius(10)
-            .padding(.top, 20)
+            .padding(.top)
             .onAppear {
                 let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                     withAnimation(.easeIn(duration: 0.2)) {
